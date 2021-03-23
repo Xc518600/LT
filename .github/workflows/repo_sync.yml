@@ -27,7 +27,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-hzys-HiCnUnicom
+    types: sync-mixool-HiCnUnicom
 jobs:
   repo-sync:
     env:
@@ -39,11 +39,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync hzys-HiCnUnicom
+      - name: sync mixool-HiCnUnicom
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/hzys/HiCnUnicom.git"
+          source_repo: "https://github.com/mixool/HiCnUnicom.git"
           source_branch: "master"
           destination_branch: "ZIYE"
           github_token: ${{ secrets.PAT }}
